@@ -7,11 +7,12 @@
 /dataSources/
 /dataSources.local.xml
 
-# 
+# exclude the ff:
 /jsLibraryMappings.xml
 /modules.xml
 /php.xml
 /vcs.xml
+/SeekSense.iml
 
 # Hide frontend components
 /docker-compose.yml
