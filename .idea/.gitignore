@@ -1,0 +1,26 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# 
+/jsLibraryMappings.xml
+/modules.xml
+/php.xml
+/vcs.xml
+
+# Hide frontend components
+/docker-compose.yml
+/src/admin/records/recent_logs.php
+/src/admin/records/users_history.php
+/src/proto_register_ip.php
+/src/functions.php
+/src/admin/upload_data.php
+/src/seeksense.php
+/src/connection.php
+/src/static/user.js
+/src/static/uploader.js

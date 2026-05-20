@@ -1,0 +1,38 @@
+version: "3.7"
+
+services:
+  seeksense_webui:
+    extends:
+      file: docker-compose.yml
+      service: seeksense_webui
+    volumes:
+      - "./src/:/var/www/html/:r"
+      - "./apache2/ports.conf:/etc/apache2/ports.conf:r"
+      - "./apache2/sites-enabled/000-default.conf:/etc/apache2/sites-enabled/000-default:r"
+
+  mariadb:
+    extends:
+      file: docker-compose.yml
+      service: mariadb
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    environment:
+      PMA_HOST: mariadb
+    ports:
+      - '127.0.0.1:8081:80'
+    networks:
+      - seeksense_database
+
+networks:
+  seeksense_database:
+    driver: bridge
+  seeksense_webui:
+    name: seeksense_webui
+    driver: bridge
+  seeksense_embeddings:
+    name: seeksense_embeddings
+    external: true
+
+volumes:
+  mariadb_volume:
